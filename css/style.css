@@ -17,10 +17,10 @@ main{
     background-color: cadetblue;
 }
 
-#contact-list,
+/* #contact-list,
 #chat-box{
     height: 90vh;
-}
+} */
 
 #contact-list{
     width: 20%;
@@ -40,4 +40,9 @@ main{
     height: 60px;
     border-radius: 50%;
     padding: 11px;
+}
+
+.contact-card img{
+    width: 70px;
+    border-radius: 50%;
 }
