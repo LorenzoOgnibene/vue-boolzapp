@@ -12,27 +12,38 @@
     color: #91e1ff;
 }
 
+
+
+
+
 main{
     height: 100vh;
     background-color: cadetblue;
 }
 
-/* #contact-list,
-#chat-box{
-    height: 90vh;
-} */
-
 #contact-list{
-    width: 20%;
+    width: 30%;
+    height: 80vh;
 }
 
 #chat-box{
-    width: 70%;
+    width: 60%;
+    height: 80vh;
+}
+
+#contacts-box{
+    height: 60vh;
+    overflow: scroll;
 }
 
 #user-profile img{
     width: 60px;
     border-radius: 50%;
+}
+
+#user-profile,
+.active-chat{
+    height: 6vh;
 }
 
 #user-notice i{
@@ -42,6 +53,7 @@ main{
     padding: 11px;
 }
 
+.active-chat img,
 .contact-card img{
     width: 70px;
     border-radius: 50%;

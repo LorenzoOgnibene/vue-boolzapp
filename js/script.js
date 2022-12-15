@@ -4,6 +4,7 @@ createApp({
     data(){
         return{
             userSearchChat : '',
+            activeChatIndex : 0,
             contacts: [
                 {
                     name: 'Michele',
