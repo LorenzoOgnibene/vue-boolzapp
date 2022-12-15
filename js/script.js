@@ -177,6 +177,12 @@ createApp({
         currentChat(index){
             this.activeChatIndex = index;
         },
+
+        newMessage(){
+            this.userMessage = {message : this.userMessage, status : 'sent'}
+            this.contacts[this.activeChatIndex].messages.push(this.userMessage);
+            this.userMessage = '';
     }
 
+    }
 }).mount('#app')
