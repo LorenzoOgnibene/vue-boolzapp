@@ -5,6 +5,7 @@ createApp({
         return{
             userSearchChat : '',
             userMessage : '',
+            botMessage: '',
             activeChatIndex : 0,
             contacts: [
                 {
@@ -179,10 +180,16 @@ createApp({
         },
 
         newMessage(){
-            this.userMessage = {message : this.userMessage, status : 'sent'}
+            this.userMessage = {message : this.userMessage, status : 'sent'};
             this.contacts[this.activeChatIndex].messages.push(this.userMessage);
             this.userMessage = '';
-    }
+            setTimeout(this.autoMessage, 1000);
+        },
+        autoMessage(){
+            this.botMessage = {message : 'Va bene!', status : 'received'};
+            this.contacts[this.activeChatIndex].messages.push(this.botMessage);
+        }
+
 
     }
 }).mount('#app')

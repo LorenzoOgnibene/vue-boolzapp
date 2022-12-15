@@ -30,12 +30,12 @@ main{
 
 #contact-list{
     width: 30%;
-    height: 80vh;
+
 }
 
 #chat-box{
     width: 60%;
-    height: 80vh;
+
 }
 
 #contacts-box{
@@ -55,7 +55,7 @@ main{
 
 #user-profile,
 .active-chat{
-    height: 6vh;
+    height: 80px;
 }
 
 #user-notice i{
@@ -75,10 +75,11 @@ main{
     height: 70vh;
     background-image: url('../img/mine.jpg');
     padding: 2rem;
+    overflow: scroll;
 }
 
 .text-bar{
-    height: 4vh;
+    height: 57px;
 }
 
 .text-bar i{
