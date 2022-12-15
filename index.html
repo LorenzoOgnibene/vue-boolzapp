@@ -32,7 +32,7 @@
                             <i class="fa-solid fa-bell-slash fa-2x bg-white c-light-blue"></i>
                             <div class="text-wrapper ms-2">
                                 <p class="mb-0">Ricevi notifiche di nuovi messaggi</p>
-                                <a href="#" class="link-info">Attiva notifiche desktop</a>
+                                <a href="#" class="link-secondary">Attiva notifiche desktop</a>
                             </div>
                         </div>
                         <!-- SEARCH BAR -->
@@ -42,7 +42,7 @@
                         </div>
                         <!-- CONTACTS PROFILE AND LAST MESSAGE -->
                         <div id="contacts-box">
-                            <div class="contact-card p-3 d-flex" v-for="(user, indexOf) in contacts">
+                            <div class="contact-card p-3 d-flex" v-for="(user, indexOf) in contacts" @click="currentChat(indexOf)">
                                 <img :src="`./img/avatar${user.avatar}.jpg`" :alt="user.name" class="me-3">
                                 <div class="name-message-wrapper">
                                     <h4 class="m-0">{{user.name}}</h4>
@@ -59,7 +59,19 @@
                                 <p class="text-secondary">ultimo accesso</p>
                             </div>
                         </div>
-                        <div class="chat"></div>
+                        <div class="chat">
+                            <div class="user-message ms-auto me-4 bg-lime">
+                                <p class="m-0">Lorem ipsum dolor sit amet consectetur.</p>
+                            </div>
+                            <div class="recived-message bg-white">
+                                <p class="m-0">Lorem ipsum dolor sit amet consectetur.</p>
+                            </div>
+                        </div>
+                        <div class="text-bar bg-cappuccino d-flex align-items-center justify-content-around">
+                            <i class="fa-regular fa-face-smile"></i>
+                            <input v-model="userMessage" class="w-75" placeholder="Scrivi un messaggio">
+                            <i class="fa-solid fa-microphone"></i>
+                        </div>
                     </div>
                 </div>
             </div>

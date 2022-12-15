@@ -8,10 +8,17 @@
     background-color: #91e1ff;
 }
 
+.bg-cappuccino{
+    background-color: #f9f3f1;
+}
+
+.bg-lime{
+    background-color: #dcffc2;
+}
+
 .c-light-blue{
     color: #91e1ff;
 }
-
 
 
 
@@ -34,6 +41,11 @@ main{
 #contacts-box{
     height: 60vh;
     overflow: scroll;
+    cursor: pointer;
+}
+
+.contact-card:hover{
+    background-color: #f1f1f1;
 }
 
 #user-profile img{
@@ -58,3 +70,25 @@ main{
     width: 70px;
     border-radius: 50%;
 }
+
+.chat{
+    height: 70vh;
+    background-image: url('../img/mine.jpg');
+    padding: 2rem;
+}
+
+.text-bar{
+    height: 4vh;
+}
+
+.text-bar i{
+    font-size: 1.5rem;
+}
+
+.recived-message,
+.user-message{
+    max-width: 40%;
+    padding: .8rem;
+    border-radius: .8rem;
+}
+
