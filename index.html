@@ -60,11 +60,8 @@
                             </div>
                         </div>
                         <div class="chat">
-                            <div class="user-message ms-auto me-4 bg-lime">
-                                <p class="m-0">Lorem ipsum dolor sit amet consectetur.</p>
-                            </div>
-                            <div class="recived-message bg-white">
-                                <p class="m-0">Lorem ipsum dolor sit amet consectetur.</p>
+                            <div class="message mb-2" v-for="element in contacts[activeChatIndex].messages" :class="element.status">
+                                <p class="m-0">{{element.message}}</p>
                             </div>
                         </div>
                         <div class="text-bar bg-cappuccino d-flex align-items-center justify-content-around">

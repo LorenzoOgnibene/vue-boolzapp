@@ -85,10 +85,19 @@ main{
     font-size: 1.5rem;
 }
 
-.recived-message,
-.user-message{
+
+.message{
     max-width: 40%;
     padding: .8rem;
     border-radius: .8rem;
+}
+
+.sent{
+    background-color: #dcffc2;
+    margin-inline-start: auto;
+}
+
+.received{
+    background-color: white;
 }
 
