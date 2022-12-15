@@ -1,0 +1,43 @@
+/****** CUSTOM COLOR *******/
+
+.bg-light-grey{
+    background-color: #f1f1f1;
+}
+
+.bg-light-blue{
+    background-color: #91e1ff;
+}
+
+.c-light-blue{
+    color: #91e1ff;
+}
+
+main{
+    height: 100vh;
+    background-color: cadetblue;
+}
+
+#contact-list,
+#chat-box{
+    height: 90vh;
+}
+
+#contact-list{
+    width: 20%;
+}
+
+#chat-box{
+    width: 70%;
+}
+
+#user-profile img{
+    width: 60px;
+    border-radius: 50%;
+}
+
+#user-notice i{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    padding: 11px;
+}
