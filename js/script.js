@@ -188,8 +188,19 @@ createApp({
         autoMessage(){
             this.botMessage = {message : 'Va bene!', status : 'received'};
             this.contacts[this.activeChatIndex].messages.push(this.botMessage);
-        }
+        },
+        findContact(){
+            this.contacts.forEach(element => {
+                element.name = element.name.toLowerCase();
+                this.userSearchChat = this.userSearchChat.toLowerCase()
+                if(element.name.includes(this.userSearchChat)){
+                    element.visible = true
+                }else{
+                    element.visible = false
+                }               
+            });
 
 
+    }
     }
 }).mount('#app')

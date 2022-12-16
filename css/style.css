@@ -30,12 +30,13 @@ main{
 
 #contact-list{
     width: 30%;
+    height: 90%;
 
 }
 
 #chat-box{
     width: 60%;
-
+    height: 90%;
 }
 
 #contacts-box{
@@ -72,7 +73,7 @@ main{
 }
 
 .chat{
-    height: 70vh;
+    height: calc(100% - 137px);
     background-image: url('../img/mine.jpg');
     padding: 2rem;
     overflow: scroll;
