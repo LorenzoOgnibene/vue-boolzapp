@@ -21,11 +21,12 @@
 }
 
 
-
+body{
+    background-image: linear-gradient(to bottom, #009688 0px, #009688 15vh, #dddbdc 15vh, #dddbdc 100%);
+}
 
 main{
     height: 100vh;
-    background-color: cadetblue;
 }
 
 #contact-list{

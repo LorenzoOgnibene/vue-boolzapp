@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ToDo List</title>
+    <title>VAZAPP</title>
     <!-- MY CUSTOM STYLE -->
     <link rel="stylesheet" href="./css/style.css">
     <!-- IMPORT BOOTSTRAP V5.2 -->
@@ -46,7 +46,7 @@
                                 <img :src="`./img/avatar${user.avatar}.jpg`" :alt="user.name" class="me-3">
                                 <div class="name-message-wrapper">
                                     <h4 class="m-0">{{user.name}}</h4>
-                                    <p class="text-secondary">last message</p>
+                                    <p class="text-secondary">{{user.messages.slice(-1)[0].message}}</p>
                                 </div>
                             </div>
                         </div>
