@@ -69,12 +69,13 @@
                                 <div class="dropdown position-absolute">
                                     <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"></a>
                                     <ul class="dropdown-menu">
-                                      <li><a class="dropdown-item" href="#">Info</a></li>
+                                      <li><a class="dropdown-item" href="#" @click="isActive">Info</a></li>
                                       <li><a class="dropdown-item" href="#" @click="deleteMessage(index)">Elimina messaggio</a></li>
                                     </ul>
                                   </div>  
                                 <p class="m-0">{{element.message}}</p>
                                 <span class="message-date text-secondary">{{element.date.slice(11, -3)}}</span>
+                                <span class="info-date-message text-secondary" :class="isActiveToggle == true ? 'd-block' : 'd-none' ">{{ element.date.slice(0, -3) }}</span>
                             </div>
                         </div>
                         <!--TEXT BAR, EMOJI, REC A MESSAGE-->

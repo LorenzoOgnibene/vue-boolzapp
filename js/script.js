@@ -3,6 +3,7 @@ const { createApp } = Vue;
 createApp({
     data(){
         return{
+            isActiveToggle  : false,
             userSearchChat : '',
             userMessage : '',
             botMessage: '',
@@ -216,6 +217,10 @@ createApp({
                 }               
             });
         },
+        isActive(){
+           this.isActiveToggle = !this.isActiveToggle
+           setInterval(this.isActive, 5000);
+        }
 
         
     
