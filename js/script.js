@@ -7,6 +7,7 @@ createApp({
             userMessage : '',
             botMessage: '',
             activeChatIndex : 0,
+            dateTime : '',
             contacts: [
                 {
                     name: 'Michele',
@@ -175,19 +176,27 @@ createApp({
     },
 
     methods:{
+        dateNow(){
+            let today = new Date();
+            let date = today.getDate() + '/'+ (today.getMonth() + 1) + '/' + today.getFullYear();
+            let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            return this.dateTime = date +' '+ time;
+        },
+
         currentChat(index){
             this.activeChatIndex = index;
         },
 
         newMessage(){
-            this.userMessage = {message : this.userMessage, status : 'sent'};
+            this.userMessage = {message : this.userMessage, status : 'sent', date : this.dateNow()};
             this.contacts[this.activeChatIndex].messages.push(this.userMessage);
             this.userMessage = '';
             setTimeout(this.autoMessage, 1000);
         },
         autoMessage(){
-            this.botMessage = {message : 'Va bene!', status : 'received'};
+            this.botMessage = {message : 'Va bene!', status : 'received', date : this.dateNow()};
             this.contacts[this.activeChatIndex].messages.push(this.botMessage);
+
         },
         findContact(){
             this.contacts.forEach(element => {
@@ -199,8 +208,15 @@ createApp({
                     element.visible = false
                 }               
             });
+        },
 
+        
+    
 
-    }
-    }
+    },
+
 }).mount('#app')
+
+
+
+	
