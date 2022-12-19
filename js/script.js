@@ -199,9 +199,7 @@ createApp({
                 this.contacts.splice(this.activeChatIndex, 1);
             }else{
                 this.contacts[this.activeChatIndex].messages.splice(index, 1).message
-                
             }
-            
         },
         autoMessage(){
             this.botMessage = {message : 'Va bene!', status : 'received', date : this.dateNow()};
@@ -210,9 +208,8 @@ createApp({
         },
         findContact(){
             this.contacts.forEach(element => {
-                element.name = element.name.toLowerCase();
-                this.userSearchChat = this.userSearchChat.toLowerCase()
-                if(element.name.includes(this.userSearchChat)){
+                this.userSearchChat = this.userSearchChat
+                if(element.name.toLowerCase().includes(this.userSearchChat.toLowerCase())){
                     element.visible = true
                 }else{
                     element.visible = false
