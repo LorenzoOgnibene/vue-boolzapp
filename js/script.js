@@ -219,7 +219,10 @@ createApp({
         },
         isActive(){
            this.isActiveToggle = !this.isActiveToggle
-           setInterval(this.isActive, 5000);
+           if(this.isActiveToggle == true){
+            setTimeout(this.isActive, 5000);
+           }
+           
         }
 
         
