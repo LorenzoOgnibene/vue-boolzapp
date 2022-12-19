@@ -108,6 +108,22 @@ main{
     position: absolute;
     top: 0;
     right: 0;
-    margin-right: .5rem;
+    margin-right: 2rem;
     font-size: .8rem;
+}
+
+.dropdown {
+    top: 0;
+    right: 0;
+    margin-right: .5rem;
+    display: none;
+}
+
+.dropdown a{
+    text-decoration: none;
+    color: grey;
+}
+
+.message:hover .dropdown{
+    display: block;
 }

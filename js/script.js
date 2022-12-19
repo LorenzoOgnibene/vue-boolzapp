@@ -194,6 +194,15 @@ createApp({
             }
 
         },
+        deleteMessage(index){
+            if(this.contacts[this.activeChatIndex].messages.length <= 1){
+                this.contacts.splice(this.activeChatIndex, 1);
+            }else{
+                this.contacts[this.activeChatIndex].messages.splice(index, 1).message
+                
+            }
+            
+        },
         autoMessage(){
             this.botMessage = {message : 'Va bene!', status : 'received', date : this.dateNow()};
             this.contacts[this.activeChatIndex].messages.push(this.botMessage);
