@@ -182,16 +182,17 @@ createApp({
             let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
             return this.dateTime = date +' '+ time;
         },
-
         currentChat(index){
             this.activeChatIndex = index;
         },
-
         newMessage(){
-            this.userMessage = {message : this.userMessage, status : 'sent', date : this.dateNow()};
-            this.contacts[this.activeChatIndex].messages.push(this.userMessage);
-            this.userMessage = '';
-            setTimeout(this.autoMessage, 1000);
+            if(this.userMessage.length >= 1){
+                this.userMessage = {message : this.userMessage, status : 'sent', date : this.dateNow()};
+                this.contacts[this.activeChatIndex].messages.push(this.userMessage);
+                this.userMessage = '';
+                setTimeout(this.autoMessage, 1000);
+            }
+
         },
         autoMessage(){
             this.botMessage = {message : 'Va bene!', status : 'received', date : this.dateNow()};

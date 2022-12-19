@@ -104,3 +104,10 @@ main{
     background-color: white;
 }
 
+.message-date{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: .5rem;
+    font-size: .8rem;
+}

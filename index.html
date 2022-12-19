@@ -43,11 +43,12 @@
                         </div>
                         <!-- CONTACTS PROFILE AND LAST MESSAGE -->
                         <div id="contacts-box">
-                            <div class="contact-card p-3 d-flex" v-for="(user, indexOf) in contacts" @click="currentChat(indexOf)" :class="(user.visible === true) ? '' : 'd-none' ">
+                            <div class="contact-card p-3 d-flex position-relative" v-for="(user, indexOf) in contacts" @click="currentChat(indexOf)" :class="(user.visible === true) ? '' : 'd-none' ">
                                 <img :src="`./img/avatar${user.avatar}.jpg`" :alt="user.name" class="me-3">
                                 <div class="name-message-wrapper">
                                     <h4 class="m-0">{{user.name}}</h4>
                                     <p class="text-secondary">{{user.messages.slice(-1)[0].message}}</p>
+                                    <span class="message-date text-secondary">{{user.messages.slice(-1)[0].date.slice(11, -3)}}</span>
                                 </div>
                             </div>
                         </div>
@@ -57,13 +58,13 @@
                             <img :src="`./img/avatar${contacts[activeChatIndex].avatar}.jpg`" alt="">
                             <div class="name-message-wrapper align-content-center mt-2 ms-3">
                                 <h5 class="m-0">{{contacts[activeChatIndex].name}}</h5>
-                                <p class="text-secondary">ultimo accesso</p>
+                                <p class="text-secondary">ultimo accesso {{ contacts[activeChatIndex].messages.slice(-1)[0].date.slice(0, -3) }}</p>
                             </div>
                         </div>
                         <div class="chat">
-                            <div class="message mb-2" v-for="element in contacts[activeChatIndex].messages" :class="element.status">
+                            <div class="message mb-2 position-relative" v-for="element in contacts[activeChatIndex].messages" :class="element.status">
                                 <p class="m-0">{{element.message}}</p>
-                                <span>{{element.date.slice(11, -3)}}</span>
+                                <span class="message-date text-secondary">{{element.date.slice(11, -3)}}</span>
                             </div>
                         </div>
                         <div class="text-bar bg-cappuccino d-flex align-items-center justify-content-around">
