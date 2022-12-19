@@ -177,15 +177,18 @@ createApp({
     },
 
     methods:{
+        //Get the actual date and time
         dateNow(){
             let today = new Date();
             let date = today.getDate() + '/'+ (today.getMonth() + 1) + '/' + today.getFullYear();
             let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
             return this.dateTime = date +' '+ time;
         },
+        //Give back the index of the selected chat 
         currentChat(index){
             this.activeChatIndex = index;
         },
+        //Add a new message like an obj in my array as the same position of other messages 
         newMessage(){
             if(this.userMessage.length >= 1){
                 this.userMessage = {message : this.userMessage, status : 'sent', date : this.dateNow()};
@@ -195,6 +198,7 @@ createApp({
             }
 
         },
+        //Delete the selected message and check if how many messages are in chat. If the chat is empty so delete the whole chat. 
         deleteMessage(index){
             if(this.contacts[this.activeChatIndex].messages.length <= 1){
                 this.contacts.splice(this.activeChatIndex, 1);
@@ -202,11 +206,13 @@ createApp({
                 this.contacts[this.activeChatIndex].messages.splice(index, 1).message
             }
         },
+        //Create a new automated message. ***notice the message is only created here but he his recalled in the "newMessage" function with a timing function
         autoMessage(){
             this.botMessage = {message : 'Va bene!', status : 'received', date : this.dateNow()};
             this.contacts[this.activeChatIndex].messages.push(this.botMessage);
 
         },
+        //Check what the user writes in the search bar, is in my array name. If it's present I will show the correct search and remove incompatible search.
         findContact(){
             this.contacts.forEach(element => {
                 this.userSearchChat = this.userSearchChat
@@ -217,6 +223,7 @@ createApp({
                 }               
             });
         },
+        //Toggle messages information, when user click on info button the date information will displayed for 5seconds
         isActive(){
            this.isActiveToggle = !this.isActiveToggle
            if(this.isActiveToggle == true){
